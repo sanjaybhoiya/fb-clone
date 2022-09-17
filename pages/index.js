@@ -1,14 +1,31 @@
-import xw from 'xwind'
-import ButtonReact from '../components/ButtonReact'
-import ButtonStyled from '../components/ButtonStyled'
+import Head from 'next/head';
+ import Chatbox from '../components/Chatbox';
+import Feed from '../components/Feed';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
-const Index = () => (
-  <div css={xw`grid justify-center items-center h-screen space-y-20`}>
-    <div css={xw`space-y-20`}>
-      <ButtonReact>@emotion/react</ButtonReact>
-      <ButtonStyled>@emotion/styled</ButtonStyled>
+
+export default function Home() {
+  return (
+    <div className="h-screen bg-gray-100 overflow-hidden">
+      <Head>
+        <title>FB-Clone</title>
+      </Head>
+
+      {/* Header */}
+
+      <Header />
+
+
+      <main className="flex">
+        {/* Sidebar */}
+        <Sidebar />
+        {/* Feeds */}
+        <Feed />
+        {/* Chatbar */}
+
+        <Chatbox />
+      </main>
     </div>
-  </div>
-)
-
-export default Index
+  )
+}
